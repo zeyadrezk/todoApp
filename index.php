@@ -1,4 +1,5 @@
 <?php
+require_once "database/migration.php";
 session_start();
 $conn = mysqli_connect("localhost", "root","","todoapp");
 if(!$conn){
@@ -6,7 +7,6 @@ if(!$conn){
 }
 $sql = "SELECT * FROM `tasks` order by id asc";
 $result = mysqli_query($conn , $sql);
-
 
 
 ?>

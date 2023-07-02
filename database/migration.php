@@ -18,13 +18,9 @@ $conn = mysqli_connect($dsn,$user,$password,$dbn);
 if(!$conn){
     echo mysqli_connect_error($conn);
     }
-
-
-    $sql = "CREATE TABLE tasks   (
+    $sql = "CREATE TABLE IF NOT EXISTS `tasks`(
         id INT PRIMARY KEY AUTO_INCREMENT ,
         `title` VARCHAR(200) NOT NULL
-
-
     )";
     $result = mysqli_query($conn ,$sql);
 mysqli_close($conn);
